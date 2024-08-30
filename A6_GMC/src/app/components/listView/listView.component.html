@@ -1,0 +1,15 @@
+<div class="container text-center">
+    <div class="row row-cols-4">
+        @for(user of usersArray; track user._id) {
+        <div class="col">
+            <app-user-card [userOnCard]="user"></app-user-card>
+        </div>
+        }
+    </div>
+</div>
+
+
+
+
+
+<!-- <p>{{user._id}}: {{user.first_name}} {{user.last_name}} : {{user.email}}</p> -->

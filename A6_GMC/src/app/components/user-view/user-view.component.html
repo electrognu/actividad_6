@@ -1,1 +1,22 @@
-<p>user-view works!</p>
+<section class="container">
+    <div class="card mb-3" style="max-width:540px">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="{{user?.image}}" class="img-fluid rounded-circle" alt="...">
+            </div>
+            <div class="col-md-8"></div>
+            <div class="card-body">
+                <h5 class="card-title">{{user?.first_name}} {{user?.last_name}}</h5>
+                <p class="card-text">Username: {{user?.username}}</p>
+                <p class="Card-text">Email {{user?.email}}</p>
+                <p class="password">Password {{user?.password}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-info">Eliminar</a>
+            <a class="btn btn-info" [routerLink]="['/updateuser', user?._id]">Actualizar</a>
+            <a class="btn btn-info" [routerLink]="['/home', user?._id]">Volver al listado</a>
+        </div>
+    </div>
+
+</section>

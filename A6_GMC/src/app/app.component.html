@@ -1,4 +1,31 @@
-@for(user of usersArray; track user._id) {
-<p>{{user.first_name}} {{user.last_name}} : {{user.email}}</p>
-}
+<header>
+    <div class="container">
+        <div class="flex-wrap">
+            <ul class="nav col-lg-6 ms-auto navbar-dark">
+                <li><a class="nav-link px-2 " routerLink="/home" routerLinkActive="active">Home</a></li>
+                <li><a class="nav-link px-2" routerLink="/newuser" routerLinkActive="active">Nuevo Usuario</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="container">
+
+
+
+
+    </section>
+
+
+
+</main>
+<!-- @for(user of usersArray; track user._id) {
+<p>{{user._id}}: {{user.first_name}} {{user.last_name}} : {{user.email}}</p>
+
+<hr>
+<p>{{singleUser._id}}: {{singleUser.first_name}} {{singleUser.last_name}} : {{singleUser.email}}</p>
+<hr>
+<p>{{deletedUser._id}}: {{deletedUser.first_name}} {{deletedUser.last_name}} : {{deletedUser.email}}</p>
+-->
 <router-outlet />

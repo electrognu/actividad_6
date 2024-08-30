@@ -8,30 +8,45 @@ import { Iuser } from '../interfaces/iuser.interface';
   providedIn: 'root'
 })
 export class UsersService {
-  private apiUrl: string = 'https://peticiones.online/api/users/?page=';
+  private apiUrl: string = 'https://peticiones.online/api/users/';
 
   ///Inyectando httpClient
   private httpClient = inject(HttpClient);
-  private pagesArray: Ipages[] = [];
-
 
   /// Recogemos la primera pagina del la API
   private getPage(n: number): Promise<Ipages> {
-    const urlPage = this.apiUrl + n;
+    // this.httpClient.get nos devuelve un observable
     // firstValueFrom nos transforma un observable en una promesa
-    return firstValueFrom(this.httpClient.get<Ipages>(urlPage));
+    return firstValueFrom(this.httpClient.get<Ipages>(`${this.apiUrl}?page=${n}`));
   }
 
   async getAllUsers(): Promise<Iuser[]> {
     let users: Iuser[] = [];
-    const firstpage = await this.getPage(1);
-    const n_pages = firstpage.total_pages;
-    for (let i = 1; i <= n_pages; i++) {
+    const firstpage = await this.getPage(1); // así nos aseguramos de que funciona si el numero de paginas cambia.
+    for (let i = 1; i <= firstpage.total_pages; i++) {
       const page = await this.getPage(i);
       users = users.concat(page.results);
     }
     return users;
   }
+
+  // REFACTORIZADA POR AI CODEIUM
+  // async getAllUsers(): Promise<Iuser[]> {
+  //   const pages = await Promise.all(
+  //     Array.from({ length: (await this.getPage(1)).total_pages }, (_, i) => this.getPage(i + 1))
+  //   );
+  //   return pages.flatMap(page => page.results);
+  // }
+
+  getUserById(id: string): Promise<Iuser> {
+    return firstValueFrom(this.httpClient.get<Iuser>(this.apiUrl + id));
+  }
+
+  deleteUserById(id: string): Promise<Iuser> {
+    return firstValueFrom(this.httpClient.delete<Iuser>(this.apiUrl + id));
+  }
+
+
 }
 
 

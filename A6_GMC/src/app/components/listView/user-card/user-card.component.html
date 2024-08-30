@@ -1,0 +1,19 @@
+<!-- https://bootdey.com/snippets/view/Table-user-information#preview -->
+<!-- https://bootdey.com/snippets/view/single-advisor-profile -->
+<!-- https://bootdey.com/snippets/view/bs4-profile-header-card -->
+
+
+
+
+
+<div class="card .h-200" style="width: 18rem;">
+    <img src="{{user?.image}}" class="card-img-top rounded-circle" alt="...">
+    <div class="card-body">
+        <p class="card-text">{{user?.first_name}} {{user?.last_name}}</p>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-info" [routerLink]="['/userview', user?._id]">Ver detalles</a>
+        <a class="btn btn-info" [routerLink]="['/updateuser', user?._id]">Actualizar</a>
+        <a class="btn btn-info" [routerLink]="['/deleteuser', user?._id]">Borrar</a>
+    </div>
+</div>
