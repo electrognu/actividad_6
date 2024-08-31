@@ -9,9 +9,31 @@ import { Iuser } from '../interfaces/iuser.interface';
 })
 export class UsersService {
   private apiUrl: string = 'https://peticiones.online/api/users/';
-
-  ///Inyectando httpClient
+  // indicates how many users we will serve on each demand of the service, defalut is 8 as asked in the exercice.
+  private userPerPage: number = 8;
   private httpClient = inject(HttpClient);
+
+
+  /***
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+  async getPage(n: number): Promise<Iuser[]> {
+    const firstPage = await this.getDBPage(n);
+    let
+
+
+
+    return firstPage.results;
+
+  }
+
+
 
 
   /**
@@ -23,7 +45,7 @@ export class UsersService {
    * @param n The number of the page to retrieve.
    * @returns A promise that resolves with the retrieved page.
    */
-  private getPage(n: number): Promise<Ipages> {
+  private getDBPage(n: number): Promise<Ipages> {
     return firstValueFrom(this.httpClient.get<Ipages>(`${this.apiUrl}?page=${n}`));
   }
 
@@ -35,11 +57,18 @@ export class UsersService {
    *
    * @returns A promise that resolves with an array of all the users.
    */
+
+
+
+
+
+
+
   async getAllUsers(): Promise<Iuser[]> {
     let users: Iuser[] = [];
-    const firstpage = await this.getPage(1); // así nos aseguramos de que funciona si el numero de paginas cambia.
+    const firstpage = await this.getDBPage(1); // así nos aseguramos de que funciona si el numero de paginas cambia.
     for (let i = 1; i <= firstpage.total_pages; i++) {
-      const page = await this.getPage(i);
+      const page = await this.getDBPage(i);
       users = users.concat(page.results);
     }
     return users;
