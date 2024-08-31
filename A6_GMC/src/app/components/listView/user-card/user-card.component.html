@@ -14,6 +14,6 @@
     <div class="card-footer">
         <a class="btn btn-info" [routerLink]="['/userview', user?._id]">Ver detalles</a>
         <a class="btn btn-info" [routerLink]="['/updateuser', user?._id]">Actualizar</a>
-        <a class="btn btn-info" [routerLink]="['/deleteuser', user?._id]">Borrar</a>
+        <button class="btn btn-info" (click)="deleteuser(user?._id ?? '')">Borrar</button>
     </div>
 </div>

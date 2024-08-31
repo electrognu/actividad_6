@@ -25,4 +25,17 @@ export class UserViewComponent {
     })
   }
 
+  async delete(id: string) {
+    // Comprobar si es vacia o no !!
+    let del = confirm('Seguro que quieres Borrar el empleado cuyo id es :' + id);
+    if (del) {
+      //lamo al servicio y hago el borrado.
+      try {
+        const response = await this.userService.deleteUserById(id);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
+
 }

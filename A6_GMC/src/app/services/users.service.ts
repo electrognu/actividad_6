@@ -13,13 +13,28 @@ export class UsersService {
   ///Inyectando httpClient
   private httpClient = inject(HttpClient);
 
-  /// Recogemos la primera pagina del la API
+
+  /**
+   * Retrieves a page from the API.
+   *
+   * This function retrieves the n-th page from the API, with n being the parameter
+   * passed to this function.
+   *
+   * @param n The number of the page to retrieve.
+   * @returns A promise that resolves with the retrieved page.
+   */
   private getPage(n: number): Promise<Ipages> {
-    // this.httpClient.get nos devuelve un observable
-    // firstValueFrom nos transforma un observable en una promesa
     return firstValueFrom(this.httpClient.get<Ipages>(`${this.apiUrl}?page=${n}`));
   }
 
+  /**
+   * Retrieves all users from the API. But we will not need it ...
+   *
+   * This function retrieves all the users from the API, by getting the first page,
+   * and then iterating over the total number of pages, and getting each page.
+   *
+   * @returns A promise that resolves with an array of all the users.
+   */
   async getAllUsers(): Promise<Iuser[]> {
     let users: Iuser[] = [];
     const firstpage = await this.getPage(1); // así nos aseguramos de que funciona si el numero de paginas cambia.
@@ -30,18 +45,43 @@ export class UsersService {
     return users;
   }
 
-  // REFACTORIZADA POR AI CODEIUM
-  // async getAllUsers(): Promise<Iuser[]> {
-  //   const pages = await Promise.all(
-  //     Array.from({ length: (await this.getPage(1)).total_pages }, (_, i) => this.getPage(i + 1))
-  //   );
-  //   return pages.flatMap(page => page.results);
-  // }
+  /**
+   * Inserts a user into the API.
+   *
+   * @param bodyuser The user to be inserted.
+   * @returns The promise that resolves with the inserted user.
+   */
+  async insert(bodyuser: Iuser): Promise<Iuser> {
+    return firstValueFrom(this.httpClient.post<Iuser>(this.apiUrl, bodyuser));
+  }
 
+  /**
+   * Updates a user in the API.
+   *
+   * @param bodyuser The user to be updated. The _id property is removed before
+   * sending the request.
+   * @returns A promise that resolves with the updated user.
+   */
+  async update(bodyuser: Iuser): Promise<Iuser> {
+    let id = bodyuser._id;
+    delete bodyuser._id;
+    return firstValueFrom(this.httpClient.put<Iuser>(this.apiUrl + id, bodyuser));
+  }
+
+  /**
+   * Gets a user by its id.
+   * @param id The id of the user to retrieve.
+   * @returns A promise that resolves with the retrieved user.
+   */
   getUserById(id: string): Promise<Iuser> {
     return firstValueFrom(this.httpClient.get<Iuser>(this.apiUrl + id));
   }
 
+  /**
+   * Deletes a user by its id.
+   * @param id The id of the user to delete.
+   * @returns A promise that resolves with the deleted user.
+   */
   deleteUserById(id: string): Promise<Iuser> {
     return firstValueFrom(this.httpClient.delete<Iuser>(this.apiUrl + id));
   }

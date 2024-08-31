@@ -11,4 +11,13 @@ import { RouterLink } from '@angular/router';
 })
 export class UserCardComponent {
   @Input('userOnCard') user: Iuser | null = null;
+
+
+  deleteuser(id: string) {
+    let borrador = confirm('deseas borrar el empleado con id:' + id)
+    console.log("Borrando Usuario");
+
+  }
+
+
 }

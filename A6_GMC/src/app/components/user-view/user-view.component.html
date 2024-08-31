@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="card-footer">
-            <a class="btn btn-info">Eliminar</a>
+            <button class="btn btn-info" (click)="delete(user?._id ?? '')">Eliminar</button>
             <a class="btn btn-info" [routerLink]="['/updateuser', user?._id]">Actualizar</a>
             <a class="btn btn-info" [routerLink]="['/home', user?._id]">Volver al listado</a>
         </div>

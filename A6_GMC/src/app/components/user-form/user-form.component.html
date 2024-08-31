@@ -1,1 +1,29 @@
-<p>user-form works!</p>
+<section class="container mt-3">
+    <div class="card shadow p-5">
+
+        <h3>{{tipoFormulario}} usuario</h3>
+        <hr>
+        <form [formGroup]="userForm " (ngSubmit)="getDataForm()">
+
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First name</label>
+                <input id="first_name" type="text" class="form-control" formControlName="first_name"
+                    autocomplete="name">
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last name</label>
+                <input id="last_name" type="text" class="form-control" formControlName="last_name" autocomplete="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input id="email" type="email" class="form-control" formControlName="email" autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image</label>
+                <input id="image" type="text" class="form-control" formControlName="image" autocomplete="url">
+            </div>
+            <button type="submit" class="btn btn-primary">{{tipoFormulario}}</button>
+        </form>
+
+    </div>
+</section>
