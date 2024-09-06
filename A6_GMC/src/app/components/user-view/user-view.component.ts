@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Iuser } from '../../interfaces/iuser.interface';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { UsersService } from '../../services/users.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -26,16 +27,54 @@ export class UserViewComponent {
   }
 
   async delete(id: string) {
-    // Comprobar si es vacia o no !!
-    let del = confirm('Seguro que quieres Borrar el empleado cuyo id es :' + id);
-    if (del) {
+
+    let sar = await Swal.fire({
+      title: 'Seguro que quieres eliminar',
+      text: 'el empleado con id :' + id,
+      icon: 'warning',
+      cancelButtonText: 'Cancelar',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, eliminalo'
+    })
+
+    /// console.log(sar);
+    if (sar.isConfirmed) {
       //lamo al servicio y hago el borrado.
       try {
-        const response = await this.userService.deleteUserById(id);
+        const resp = await this.userService.deleteUserById(id);
+        let sar = await Swal.fire({
+          title: 'Eliminado con exito',
+          text: 'Usuario:' + resp.first_name + ' ' + resp.last_name + 'eliminado de la BD',
+          icon: 'success',
+          timer: 3000,
+        })
       } catch (error) {
+        let sar = await Swal.fire({
+          title: 'Ups! Algo no fue bien, contacta el administrador!',
+          text: 'error:' + error,
+          icon: 'error',
+        })
         console.log(error);
       }
     }
   }
+
+
+
+
+  // async delete(id: string) {
+  //   // Comprobar si es vacia o no !!
+  //   let del = confirm('Seguro que quieres Borrar el empleado cuyo id es :' + id);
+  //   if (del) {
+  //     //lamo al servicio y hago el borrado.
+  //     try {
+  //       const response = await this.userService.deleteUserById(id);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  // }
 
 }

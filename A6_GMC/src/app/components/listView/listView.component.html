@@ -1,19 +1,20 @@
-<div class="container text-center">
+<div class="container " style="max-width: 1250  px;">
 
-    <div class="row row-cols-4">
+    <div class="row justify-content-center">
         @for(user of usersArray; track user._id) {
-        <div class="col">
+        <div class="col-sm-6 col-md-4 col-xl-3 justify-content-center p-2">
             <app-user-card [userOnCard]="user"></app-user-card>
         </div>
         }
     </div>
 
-    <div>
+    <div class="d-flex justify-content-center pt-3 gap-2">
         @if (actualPage > 1) {
-        <button class="btn btn-info" (click)="previousPage()">Anterior</button>
+        <button class="btt-next-previous" (click)="previousPage()"> Anterior</button>
         }
-        <button class="btn btn-info">Pagina {{actualPage}} de {{listView_total_pages}}</button>
-        @if (actualPage < listView_total_pages) { <button class="btn btn-info" (click)="nextPage()">Siguiente</button>
+        <button class="btt-next-previous">Página {{actualPage}} de {{listView_total_pages}}</button>
+        @if (actualPage < listView_total_pages) { <button class="btt-next-previous" (click)="nextPage()">Siguiente
+            </button>
             }
     </div>
 

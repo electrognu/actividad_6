@@ -1,2 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css');
+
+:root {
+
+    /* MAIN COLORS */
+    --color-background: #f5f5f5;
+    --color-text: #ffffff;
+    --color-primary: #3f51b5;
+    --color-active-link: #8f0c8f;
+    /* LISTVIEW COLORS */
+    --color-listview-background: #fff;
+    --color-listview-text: #212121;
+    --color-listview-button-next-previous-background: #8f0c8f;
+    --color-listview-button-next-previous-text: #f7f1f1;
+    --color-listview-button-border: #ccc;
+    --color-listview-button-hover-background: #e0e0e0;
+    --color-listview-button-hover-text: #212121;
+
+
+    /* CARD COLORS */
+    --color-card-background: #fff;
+    --color-card-text: #212121;
+    --color-card-border: #ccc;
+    --color-card-button-background: #f5f5f5;
+    --color-card-button-text: #212121;
+    --color-card-button-border: #ccc;
+    --color-card-button-hover-background: #e0e0e0;
+    --color-card-button-hover-text: #212121;
+}

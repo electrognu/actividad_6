@@ -1,4 +1,4 @@
 .active {
-    color: red;
+    color: var(--color-active-link);
     font-weight: bold;
 }

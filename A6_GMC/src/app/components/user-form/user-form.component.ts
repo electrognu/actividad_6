@@ -3,6 +3,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { UsersService } from '../../services/users.service';
 import { Iuser } from '../../interfaces/iuser.interface';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-form',
@@ -59,30 +60,46 @@ export class UserFormComponent {
     if (this.userForm.value._id) {  // actualizando usuario
       console.log('Actualizando usuario')
       try {
-        const response: Iuser = await this.userService.update(this.userForm.value);
-        if (response._id) {
-          console.log('--> Usuario actualizado con exito', response.first_name)
-          alert(`--> Usuario actualizado con exito. Id: ${response._id}`);
+        const resp: Iuser = await this.userService.update(this.userForm.value);
+        if (resp._id) {
+          let sar = await Swal.fire({
+            title: 'Usuario actualizado con exito',
+            text: 'Usuario:' + resp.first_name + ' ' + resp.last_name,
+            icon: 'success',
+            timer: 3000,
+          })
           this.router.navigate(['/home']);
         }
       } catch (error) {
-        alert(`Error al insertar usuario. ${error}`);
+        let sar = await Swal.fire({
+          title: 'Ups! Algo no fue bien, contacta el administrador!',
+          text: 'error:' + error,
+          icon: 'error',
+        })
         console.log(error);
       }
       console.log(this.userForm.value._id)
     } else {
       console.log('--> Insertando usuario')
       try {
-        const response: Iuser = await this.userService.insert(this.userForm.value);
-        console.log(response);
-        if (response.id) {
+        const resp: Iuser = await this.userService.insert(this.userForm.value);
+        console.log(resp);
+        if (resp.id) {
           // recargar la lista de usuarios si nos vamos a la pagina actual
-          console.log('--> Usuario insertado con exito', response.id)
-          alert(`Usuario insertado con exito. Id: ${response.id}`);
+          let sar = await Swal.fire({
+            title: 'Usuario insertado con exito',
+            text: 'Usuario:' + resp.first_name + ' ' + resp.last_name,
+            icon: 'success',
+            timer: 3000,
+          })
           this.router.navigate(['/home']);
         }
       } catch (error) {
-        alert(`Error al insertar usuario. ${error}`);
+        let sar = await Swal.fire({
+          title: 'Ups! Algo no fue bien, contacta el administrador!',
+          text: 'error:' + error,
+          icon: 'error',
+        })
         console.log(error);
       }
     }

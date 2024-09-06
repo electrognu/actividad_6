@@ -1,19 +1,26 @@
-<!-- https://bootdey.com/snippets/view/Table-user-information#preview -->
-<!-- https://bootdey.com/snippets/view/single-advisor-profile -->
-<!-- https://bootdey.com/snippets/view/bs4-profile-header-card -->
-
-
-
-
-
-<div class="card .h-200" style="width: 18rem;">
-    <img src="{{user?.image}}" class="card-img-top rounded-circle" alt="...">
-    <div class="card-body">
-        <p class="card-text">{{user?.first_name}} {{user?.last_name}}</p>
+<div class="card mx-auto bg-dark" style="width: 16rem;">
+    <div class="d-flex justify-content-center align-items-center pt-2" style="height: 14rem;">
+        <img src="{{user?.image}}" class=" w-75 rounded-circle" alt="">
     </div>
-    <div class="card-footer">
-        <a class="btn btn-info" [routerLink]="['/userview', user?._id]">Ver detalles</a>
-        <a class="btn btn-info" [routerLink]="['/updateuser', user?._id]">Actualizar</a>
-        <button class="btn btn-info" (click)="deleteuser(user?._id ?? '')">Borrar</button>
+    <div class="card-body bg-dark text-light" style="height: 4rem;">
+        <h6 class="card-title">{{user?.first_name}} {{user?.last_name}}</h6>
+    </div>
+
+
+    <div class="card-footer p-0" style="height: 4rem;">
+        <div class="d-flex pt-1 gap-2 px-1">
+            <a class="btt-iconic" [routerLink]="['/userview', user?._id]">
+                <img src="search.svg" alt="Ver detalles">
+                Ver detalles
+            </a>
+            <a class="btt-iconic" [routerLink]="['/updateuser', user?._id]">
+                <img src="reload.svg" alt="Actualizar">
+                Actualizar
+            </a>
+            <button class="btt-iconic" (click)="deleteuser(user?._id ?? '')">
+                <img src="trash.svg" alt="Borrar">
+                Borrar
+            </button>
+        </div>
     </div>
 </div>

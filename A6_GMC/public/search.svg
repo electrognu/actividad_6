@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   height="745.57153"
+   width="720.69702"
+   version="1.1"
+   id="Layer_1"
+   viewBox="0 0 461.24609 477.16578"
+   xml:space="preserve"
+   sodipodi:docname="search_reload_trash.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"><defs
+   id="defs19" /><sodipodi:namedview
+   id="namedview17"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="0.18605747"
+   inkscape:cx="343.97974"
+   inkscape:cy="728.2696"
+   inkscape:window-width="1452"
+   inkscape:window-height="749"
+   inkscape:window-x="50"
+   inkscape:window-y="118"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+
+<rect
+   id="Rectangle"
+   fill-rule="nonzero"
+   x="448.98157"
+   y="-37.471199"
+   width="512"
+   height="512"
+   style="fill:none;stroke:none;stroke-width:21.3333" /><path
+   d="m 194.06165,364.69841 c -90.68706,0 -164.202686,-74.72961 -164.202686,-167.06021 0,-92.3306 73.515626,-167.209379 164.202686,-167.209379 90.68705,0 164.21713,74.878779 164.21713,167.209379 0,92.3306 -73.53008,167.06021 -164.21713,167.06021 z M 456.86671,451.21174 337.79129,329.94392 C 368.96226,294.89111 388.12332,248.65123 388.12332,197.6382 388.12332,88.452421 301.2425,8.5937498e-7 194.06165,8.5937498e-7 86.880792,8.5937498e-7 -1.4160156e-6,88.452421 -1.4160156e-6,197.6382 -1.4160156e-6,306.67482 86.880792,395.12724 194.06165,395.12724 c 46.30951,0 88.78392,-16.55686 122.14638,-44.15163 l 119.55123,121.7153 c 5.83915,5.96644 15.28271,5.96644 21.10745,0 5.83915,-5.81728 5.83915,-15.51273 0,-21.47917 z"
+   id="search"
+   sketch:type="MSShapeGroup"
+   style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:20.5307;stroke-dasharray:none"
+   inkscape:export-filename="../Dev/unir/UNIR/ACTIVIDAD_6/actividad_6/A6_GMC/public/search.png"
+   inkscape:export-xdpi="90.132202"
+   inkscape:export-ydpi="90.132202" /></svg>

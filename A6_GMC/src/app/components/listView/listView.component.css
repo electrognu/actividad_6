@@ -1,0 +1,6 @@
+.btt-next-previous {
+    background-color: var(--color-listview-button-next-previous-background);
+    color: var(--color-listview-button-next-previous-text);
+    border-radius: 6px;
+    border: 0px;
+}
