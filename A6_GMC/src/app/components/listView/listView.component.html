@@ -2,7 +2,7 @@
 
     <div class="row justify-content-center">
         @for(user of usersArray; track user._id) {
-        <div class="col-sm-6 col-md-4 col-xl-3 justify-content-center p-2">
+        <div class="col-md-6 col-lg-4 col-xl-3 justify-content-center p-2">
             <app-user-card [userOnCard]="user"></app-user-card>
         </div>
         }

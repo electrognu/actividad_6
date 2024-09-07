@@ -67,6 +67,13 @@ export class UserFormComponent {
 
   }
 
+  /**
+   * Called when the user submits the form.
+   * If the form contains an _id property, it calls the UserService.update() method.
+   * If not, it calls the UserService.insert() method.
+   * In both cases, it shows a Swal.fire() message with the result of the operation.
+   * If the operation was successful, it navigates to the '/home' route.
+   */
   async getDataForm() {
 
     if (this.userForm.value._id) {

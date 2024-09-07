@@ -1,6 +1,16 @@
 .container {
     display: flex;
-    background: white;
+    background: var(--color-main-background);
     border-radius: 10px;
     overflow: hidden;
+}
+
+.bg_color {
+    background-color: var(--color-card-background);
+}
+
+.email_color {
+    background-color: var(--color-card-name-background);
+    color: var(--color-card-name-text);
+    text-emphasis: 1;
 }

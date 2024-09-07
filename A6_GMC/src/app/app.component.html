@@ -1,13 +1,13 @@
 <header>
-    <div class="container-fluid bg-dark">
+    <div class="container-fluid">
         <div class="container " style="max-width: 1100px;">
-            <div class="navbar bg-dark text-left">
+            <div class="navbar text-left">
                 <div class="col ">
                     <img src="usersLogo.png" class="img-fluid" alt="" width="50px" />
-                    <a class="text-light px-2"> Usuarios</a>
+                    <a class=" px-2 text-decoration-none"> Usuarios</a>
                 </div>
                 <div class="col ">
-                    <nav class=" nav bg-dark" data-bs-theme=" dark">
+                    <nav class=" nav">
                         <ul class="nav ms-auto">
 
                             <li><a class="nav-link px-2 " routerLink="/home" routerLinkActive="active">Home</a></li>
@@ -24,22 +24,7 @@
 
 
 <main>
-    <section class="container-fluid bg-dark">
-
-
-
-
+    <section class="container-fluid">
+        <router-outlet />
     </section>
-
-
-
 </main>
-<!-- @for(user of usersArray; track user._id) {
-<p>{{user._id}}: {{user.first_name}} {{user.last_name}} : {{user.email}}</p>
-
-<hr>
-<p>{{singleUser._id}}: {{singleUser.first_name}} {{singleUser.last_name}} : {{singleUser.email}}</p>
-<hr>
-<p>{{deletedUser._id}}: {{deletedUser.first_name}} {{deletedUser.last_name}} : {{deletedUser.email}}</p>
--->
-<router-outlet />

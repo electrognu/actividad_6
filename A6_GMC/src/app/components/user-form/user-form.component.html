@@ -1,5 +1,5 @@
-<section class="container mt-3">
-    <div class="card shadow p-5">
+<section class="container mt-3 ">
+    <div class="card  p-5 bg_color">
 
         <h3>{{formType}} usuario</h3>
         <hr>
@@ -7,27 +7,30 @@
 
             <div class="mb-3">
                 <label for="first_name" class="form-label">First name</label>
-                <input id="first_name" type="text" class="form-control" formControlName="first_name"
+                <input id="first_name" type="text" class="form-control bg_color_input" formControlName="first_name"
                     autocomplete="name">
 
             </div>
             <div class="mb-3">
                 <label for="last_name" class="form-label">Last name</label>
-                <input id="last_name" type="text" class="form-control" formControlName="last_name" autocomplete="name">
+                <input id="last_name" type="text" class="form-control bg_color_input" formControlName="last_name"
+                    autocomplete="name">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input id="email" type="email" class="form-control" formControlName="email" autocomplete="email">
+                <input id="email" type="email" class="form-control bg_color_input" formControlName="email"
+                    autocomplete="email">
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image URL</label>
-                <input id="image" type="text" class="form-control" formControlName="image" autocomplete="url">
-                @if (userForm.get('image')?.hasError('required') && userForm.get('image')?.touched) {
+                <input id="image" type="text" class="form-control bg_color_input" formControlName="image"
+                    autocomplete="url">
+                @if (userForm.get('image')?.hasError('required') && userForm.get('image')?.touched ){
                 <small class="text-danger">Solo se admiten imagenes de tipo: https://i.pravatar.cc/500?u=...</small>
                 }
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="!userForm.valid">{{formType}}</button>
+            <button type="submit" class="btt" [disabled]="!userForm.valid">{{formType}}</button>
         </form>
 
     </div>

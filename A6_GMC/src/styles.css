@@ -3,28 +3,59 @@
 
 :root {
 
-    /* MAIN COLORS */
-    --color-background: #f5f5f5;
-    --color-text: #ffffff;
-    --color-primary: #3f51b5;
-    --color-active-link: #8f0c8f;
+    /* MAIN COLORS 
+    #1e201e
+    #3c3d37
+    #697565
+    #ecdfcc
+    */
+    --color-main-background: #1e201e;
+    --color-main-text: #78A083;
+    --color-link: #697565;
+    --color-active-link: #c7dbbf;
+
     /* LISTVIEW COLORS */
     --color-listview-background: #fff;
     --color-listview-text: #212121;
-    --color-listview-button-next-previous-background: #8f0c8f;
-    --color-listview-button-next-previous-text: #f7f1f1;
-    --color-listview-button-border: #ccc;
+    --color-listview-button-next-previous-background: #c4c71d;
+    --color-listview-button-next-previous-text: #3c3d37;
+
     --color-listview-button-hover-background: #e0e0e0;
     --color-listview-button-hover-text: #212121;
 
 
     /* CARD COLORS */
-    --color-card-background: #fff;
-    --color-card-text: #212121;
-    --color-card-border: #ccc;
-    --color-card-button-background: #f5f5f5;
+    --color-card-background: #697565;
+    --color-card-text: #fff;
+    --color-card-name-background: #3c3d37;
+    --color-card-name-text: #c7dbbf;
     --color-card-button-text: #212121;
-    --color-card-button-border: #ccc;
-    --color-card-button-hover-background: #e0e0e0;
+    --color-card-button-hover-background: #c7dbbf;
     --color-card-button-hover-text: #212121;
+
+    /* FORM COLORS */
+    --color-form-background: #3c3d37;
+    --color-form-text: #c7dbbf;
+    --color-form-inputs: #ecdfcc;
+}
+
+.btt {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 5px;
+    background-color: var(--color-card-background);
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    text-decoration: none;
+    outline: none;
+}
+
+.btt:hover {
+    background-color: var(--color-card-name-text);
 }

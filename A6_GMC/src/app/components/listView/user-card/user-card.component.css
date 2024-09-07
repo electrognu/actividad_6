@@ -1,48 +1,39 @@
 .btt-iconic {
     display: flex;
     flex-direction: column;
-    /* Alinea los elementos en columna */
     align-items: center;
-    /* Centra los elementos horizontalmente */
     justify-content: center;
-    /* Centra los elementos verticalmente */
     padding: 5px;
-    /* Espaciado dentro del botón */
     border: none;
-    /* Elimina el borde por defecto */
-    background-color: #c4c71d;
-    /* Color de fondo */
+    background-color: var(--color-card-background);
     color: rgb(0, 0, 0);
-    /* Color del texto */
-    font-size: 16px;
-    /* Tamaño del texto */
     cursor: pointer;
-    /* Cursor en forma de mano al pasar el ratón */
     border-radius: 6px;
     text-decoration: none;
-
-
-    /* Bordes redondeados */
     outline: none;
-    /* Elimina el outline al enfocar */
     width: 6rem;
     height: 100%;
     font-size: 11px;
-
 }
 
 .btt-iconic img,
 .btt-iconic svg {
     width: 24px;
-    /* Tamaño del icono */
     height: 24px;
-    /* Tamaño del icono */
     margin-bottom: 3px;
-    /* Espacio entre el icono y el texto */
 }
 
-
 .btt-iconic:hover {
-    background-color: #bb2a2a;
-    /* Color al pasar el ratón */
+    background-color: var(--color-card-button-hover-background);
+    color: var(--color-card-button-hover-text);
+}
+
+.card_colors {
+    background-color: var(--color-card-background);
+    color: var(--color-card-text);
+}
+
+.card_name_colors {
+    background-color: var(--color-card-name-background);
+    color: var(--color-card-name-text);
 }
